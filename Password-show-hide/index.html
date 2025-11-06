@@ -1,11 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Password show/hide mini project</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/079c659200.js" crossorigin="anonymous"></script>
 </head>
-<body>
-    
+
+<body class="poppins-regular">
+    <header>
+        <!-- <h1><i class="fa-solid fa-moon"></i>
+        </h1> -->
+        <div id="brightness"><i class="fa-solid fa-sun"></i></div>
+
+    </header>
+    <div class="content-box">
+        <div class="input-box">
+            <label for="password">Enter Your Password:</label>
+            <br>
+            <input type="password" name="input-password" id="password" placeholder="Password">
+            <!-- <div id="eye-box"> <i class="fa-solid fa-eye-slash"></i></div> -->
+            <i class="fa-solid fa-eye-slash" id="eye-close"></i>
+        </div>
+    </div>
+    <script>
+        // let eye = document.getElementById("eye-box");
+        let eye = document.getElementById("eye-close");
+        let password = document.getElementById("password");
+        eye.onclick = function () {
+
+            if (password.type == 'password') {
+                password.type = "text";
+                //   eye.innerHTML = '<i class="fa-solid fa-eye"></i>';
+
+                eye.classList.add("fa-solid", "fa-eye");
+
+            }
+            else {
+                password.type = "password";
+                //   eye.innerHTML = '<i class="fa-solid fa-eye-slash"></i>';
+                eye.classList.remove("fa-solid", "fa-eye")
+                eye.classList.add("fa-solid", "fa-eye-slash");
+
+            }
+        }
+        let brightness = document.getElementById("brightness");
+        document.getElementById("brightness").addEventListener("click", function () {
+            // document.body.style.backgroundColor = 'black';
+            // document.body.style.color = 'white';
+            // brightness.innerHTML = '<i class="fa-solid fa-moon"></i>';
+            if (document.body.style.backgroundColor != 'black') {
+                document.body.style.backgroundColor = 'black';
+                document.body.style.color = 'white';
+                brightness.innerHTML = '<i class="fa-solid fa-moon"></i>';
+            }
+            else{
+                 document.body.style.backgroundColor='white';
+                    document.body.style.color = 'black';
+                 brightness.innerHTML = '<i class="fa-solid fa-sun"></i>';
+            }
+
+        })
+
+
+
+    </script>
 </body>
+
 </html>
