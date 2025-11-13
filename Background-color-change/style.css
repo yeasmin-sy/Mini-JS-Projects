@@ -1,0 +1,12 @@
+#container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#bg-btn{
+    color: black;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 4px;
+}
